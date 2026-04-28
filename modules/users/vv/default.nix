@@ -25,6 +25,8 @@
 
       gtk.colorScheme = "dark";
       #xdg.configFile."starship.toml".source = ./_dotfiles/starship.toml;
+
+
       programs.git = {
         enable = true;
 	#commit.gpgSign = true;
