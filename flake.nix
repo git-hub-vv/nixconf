@@ -8,7 +8,9 @@
     import-tree.url = "github:vic/import-tree";
     flake-parts.url = "github:hercules-ci/flake-parts";
     wrapper-modules.url = "github:BirdeeHub/nix-wrapper-modules";
-  };
+
+    nvf.url = "github:NotAShelf/nvf";
+    nvf.nixpkgs.follows = "nixpakgs";
 
   outputs = inputs: let
     inherit (inputs.nixpkgs) lib;
