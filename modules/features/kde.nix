@@ -5,10 +5,10 @@
     services.desktopManager.plasma6.enable = true;
   };
 
-  perSystem = { pkgs, lib, self', ... }: {
-    packages.kde = inputs.wrapper-modules.wrappers.kde.wrap {
-      inherit pkgs;
-
-    };
-  };
+# perSystem = { pkgs, lib, self', ... }: {
+#   packages.kde = inputs.wrapper-modules.wrappers.kde.wrap {
+#     inherit pkgs;
+#
+#   };
+# };
 }
