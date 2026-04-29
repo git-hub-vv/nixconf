@@ -58,11 +58,6 @@
 
         xwayland-satellite.path = lib.getExe pkgs.xwayland-satellite;
 
-        input = {
-	  keyboard.xkb.layout = "us,ua";
-	  focus-follows-mouse = null;
-        };
-
         binds = 
 	{
 	  "Mod+Shift+Slash".show-hotkey-overlay = null;
@@ -202,6 +197,9 @@
           }
 	  hotkey-overlay {
 	    skip-at-startup
+	  }
+	  input {
+	    focus-follows-mouse max-scroll-amount="0%"
 	  }
 	'';
 

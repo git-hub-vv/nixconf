@@ -10,8 +10,8 @@
     wrapper-modules.url = "github:BirdeeHub/nix-wrapper-modules";
 
     nvf.url = "github:NotAShelf/nvf";
-    nvf.nixpkgs.follows = "nixpakgs";
-
+    nvf.inputs.nixpkgs.follows = "nixpkgs";
+  };
   outputs = inputs: let
     inherit (inputs.nixpkgs) lib;
     inherit (lib.fileset) toList fileFilter;
