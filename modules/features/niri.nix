@@ -136,9 +136,9 @@
         layout = {
 	  empty-workspace-above-first = null;
 	  background-color = "transparent";
-	  gaps = 5;
+	  gaps = 6;
 	  focus-ring = {
-	    width = 2;
+	    width = 3;
 	    active-color = "#F7ADF0";
 	  };
 	  preset-column-widths = [
@@ -157,7 +157,7 @@
 
 	"window-rules" = [
           {
-            "geometry-corner-radius" = 8;
+            "geometry-corner-radius" = 20;
             "clip-to-geometry" = true;
           }
           {
