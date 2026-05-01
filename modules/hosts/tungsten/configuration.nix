@@ -28,23 +28,20 @@
   boot.kernelParams = [
     "amdgpu.ppfeaturemask=0xffffffff"
   ];
-  #hardware.opengl.extraPackages32 = with pkgs.drivers; [
-  #  mesa
-  #];
 
   hardware = {
-    opengl = {
+    graphics = {
       enable = true;
-      driSupport32Bit = true;
+      enable32Bit = true;
     };
   };
   services.xserver.videoDrivers = [ "amdgpu" ];
 
 
 
-  environment.sessionVariables = {
-    ELECTRON_OZONE_PLATFORM_HINT = "x11";
-  };
+  #environment.sessionVariables = {
+  #  ELECTRON_OZONE_PLATFORM_HINT = "x11";
+  #};
 
 
 
@@ -83,7 +80,6 @@
 
   environment.systemPackages = with pkgs; [
     neovim
-    mesa
     clinfo
     pulseaudioFull
    ];

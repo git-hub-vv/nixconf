@@ -9,6 +9,21 @@
     services.xserver.displayManager.startx.enable = false;
     services.xserver.desktopManager.xterm.enable = false;
 
+    systemd.user.services.xwayland-satellite = {
+      description = "Xwayland Satellite";
+      wantedBy = [ "graphical-session.target" ];
+      partOf = [ "graphical-session.target" ];
+      after = [ "graphical-session.target" ];
+      serviceConfig = {
+        ExecStart = "${pkgs.xwayland-satellite}/bin/xwayland-satellite";
+        Restart = "on-failure";
+        RestartSec = 3;
+      };
+      environment = {
+        WAYLAND_DISPLAY = "wayland-1";
+      };
+    };
+
     environment.systemPackages = with pkgs; [
       xwayland-satellite
       xwayland
@@ -39,6 +54,7 @@
 
     environment.sessionVariables = {
       QT_QPA_PLATFORM = "wayland";
+      DISPLAY = ":0";
     };
 
 
